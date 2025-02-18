@@ -129,14 +129,14 @@ footer {
 
 /* button styling */
 
-/* Center the button container */
+
 .button-container {
   display: flex;
   justify-content: center; /* Centers buttons horizontally */
   margin-top: 20px; /* Add spacing above */
 }
 
-/* Style for both buttons */
+
 #btn-en, #btn-fr {
   background-color: #C8A2C8; /* Light lilac */
   color: white; /* White text */
@@ -151,17 +151,17 @@ footer {
 
 /* Hover effect */
 #btn-en:hover, #btn-fr:hover {
-  background-color: #B98EB9; /* Slightly darker lilac */
-  transform: scale(1.05); /* Slightly enlarge */
+  background-color: #B98EB9; 
+  transform: scale(1.05); 
 }
 
 /* Active (clicked) effect */
 #btn-en:active, #btn-fr:active {
-  background-color: #A070A0; /* Even darker lilac */
-  transform: scale(0.98); /* Slightly shrink */
+  background-color: #A070A0;
+  transform: scale(0.98); 
 }
 
-/* Add spacing between buttons */
+
 #btn-en {
   margin-right: 10px;
 }
