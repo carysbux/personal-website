@@ -1,0 +1,18 @@
+{
+    "en": {
+        "big-words": "Hello! I'm Carys, a junior at the University of Miami studying Interactive Media.",
+        "experience": "I have experience in front-end development with HTML, CSS, and JavaScript, using React for dynamic web applications. I'm currently learning Node.js to expand my back-end skills. I also have knowledge of Python and C# for scripting, as well as Unity for game development. My design skills include Figma for UI/UX prototyping, and I have experience with Cascade CMS for content management.",
+        "internship": "I'm currently seeking internships in web development, front-end engineering, UX/UI design, and game development to gain more hands-on experience and further develop my skills in building interactive and engaging digital experiences.",
+        "connect": "Let's connect on",
+        "linkedin": "linkedin",
+        "github": "or check out my"
+    },
+    "fr": {
+        "big-words": "Bonjour ! Je suis Carys, une étudiante en troisième année à l'Université de Miami en médias interactifs.",
+        "experience": "J'ai de l'expérience en développement front-end avec HTML, CSS et JavaScript, en utilisant React pour les applications web dynamiques. J'apprends actuellement Node.js pour développer mes compétences en back-end. J'ai également des connaissances en Python et C# pour le scripting, ainsi qu'en Unity pour le développement de jeux. Mes compétences en design incluent Figma pour le prototypage UI/UX, et j'ai de l'expérience avec Cascade CMS pour la gestion de contenu.",
+        "internship": "Je cherche actuellement des stages en développement web, ingénierie front-end, design UX/UI et développement de jeux afin d'acquérir plus d'expérience pratique et de perfectionner mes compétences dans la création d'expériences numériques interactives et engageantes.",
+        "connect": "Connectons-nous sur",
+        "linkedin": "linkedin",
+        "github": "ou consultez mon"
+    }
+}

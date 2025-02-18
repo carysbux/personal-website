@@ -83,4 +83,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1 });
 
     observer.observe(secondPage);
+
+    // translation code
+    async function loadTranslations(lang) {
+        try {
+            const response = await fetch('translations.json');
+            const translations = await response.json();
+    
+            document.getElementById('big-words').textContent = translations[lang]['big-words'];
+            document.getElementById('experience').textContent = translations[lang]['experience'];
+            document.getElementById('internship').textContent = translations[lang]['internship'];
+            document.getElementById('connect-text').textContent = translations[lang]['connect']; 
+    
+            // Update LinkedIn text
+            document.getElementById('linkedin-text').textContent = translations[lang]['linkedin'];
+    
+            // Update GitHub text but keep the link
+            document.getElementById('github-text').textContent = translations[lang]['github'];
+    
+        } catch (error) {
+            console.error("Error loading translations:", error);
+        }
+    }
+    
+    
+    
+    
+    function changeLanguage(lang) {
+        localStorage.setItem('selectedLanguage', lang); // Save language preference
+        loadTranslations(lang);
+    }
+    
+    document.getElementById('btn-en').addEventListener('click', () => changeLanguage('en'));
+    document.getElementById('btn-fr').addEventListener('click', () => changeLanguage('fr'));
+
+
 });

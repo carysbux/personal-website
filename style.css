@@ -127,3 +127,41 @@ footer {
   transform: rotate(-10deg);
 }
 
+/* button styling */
+
+/* Center the button container */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers buttons horizontally */
+  margin-top: 20px; /* Add spacing above */
+}
+
+/* Style for both buttons */
+#btn-en, #btn-fr {
+  background-color: #C8A2C8; /* Light lilac */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 12px 24px; /* Add padding */
+  font-size: 16px; /* Set readable font size */
+  cursor: pointer; /* Change cursor to pointer */
+  border-radius: 8px; /* Slightly rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Fira Code', monospace; /* Match your website font */
+}
+
+/* Hover effect */
+#btn-en:hover, #btn-fr:hover {
+  background-color: #B98EB9; /* Slightly darker lilac */
+  transform: scale(1.05); /* Slightly enlarge */
+}
+
+/* Active (clicked) effect */
+#btn-en:active, #btn-fr:active {
+  background-color: #A070A0; /* Even darker lilac */
+  transform: scale(0.98); /* Slightly shrink */
+}
+
+/* Add spacing between buttons */
+#btn-en {
+  margin-right: 10px;
+}
