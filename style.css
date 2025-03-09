@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: 'deutsch-gothic';
   src: url(fonts/Deutsch.ttf);
@@ -125,6 +123,32 @@ footer {
   left: 750px; /* spacing */
   z-index: 3;
   transform: rotate(-10deg);
+}
+
+.card:nth-child(5) {
+  left: 900px; /* spacing */
+  z-index: 3;
+  transform: rotate(-10deg);
+}
+
+
+/* carousel styling */
+
+.carousel-inner {
+  max-width: 60vw; /* Adjust the percentage as needed */
+  height: 40vw;
+  margin: 0 auto;
+  margin-bottom: 2rem; /* Add space beneath the carousel */
+ position: relative;
+}
+
+.carousel-item img {
+  width: 60vw; /* Adjust the percentage as needed */
+  height: 40vw; /* Ensure the height is less than the width for a landscape aspect ratio */
+  max-width: 850px; /* Set a maximum width */
+  max-height: 550px; /* Set a maximum height to maintain the aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  margin: 0 auto; /* Center the image */
 }
 
 /* button styling */
