@@ -16,7 +16,11 @@
 <body>
     <!-- header and nav below-->
     <header>
-
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="case-studies.html">Case Studies</a>
+        </nav>
     </header>
     <!-- center page words below-->
     <div>
@@ -24,23 +28,6 @@
             Hello! I'm Carys
         </h1>
     </div>
-
-    <!-- picture div below -->
-    <div>
-
-        <img class="image" src="images/trailing/grove.jpeg" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/jonadwd.JPG" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/me1.JPG" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/me2.jpeg" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/met.jpeg" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/princess1.JPG" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/queen1.JPG" alt="" data-index="0" data-status="inactive" class="image">
-        <img class="image" src="images/trailing/satchels.jpeg" alt="" data-index="0" data-status="inactive" class="image">
-    
-
-    </div>
-    <!-- picture div ends -->
-
 
     <!--second page below / carousel / js reference -->
     <div id="second-page">
@@ -53,47 +40,35 @@
         <!-- more about me bio here -->
 
 
-        <div class="words" id="experience"> 
-
-          I’m majoring in Interactive Media at the University of Miami, where I’ve gained experience with Python and a front-end stack including JavaScript, HTML, and CSS. 
-          I further developed my front-end web development skills through my role as a web developer assistant, where I contributed to real-world projects and strengthened my ability to collaborate within a small team. I also served as the app designer on a hackathon team that won first place, helping refine the product concept while aligning design decisions with technical constraints. I’m minoring in French, language learning keeps my mind agile and France is one of my favorite places. Coursework in philosophy has fueled my love for intellectual conversations and systems-level thinking.
-          Outside of school, I enjoy tending to my garden in the spring and summer, practicing fiber arts like sewing, knitting, and crocheting, and reading books focused on history. 
-        </div>
-
-
         <!-- more about me bio here -->
 
 <!-- carousel below -->
+        <section class="carousel-section">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
     
               <div class="carousel-item active">
-                <img class="d-block w-100" src="images/hackathon/team.jpeg" alt="first slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>In February, my team won 1st in a hackathon!</h2>
-                    <a href="https://news.miami.edu/coe/stories/2025/02/hackathon-showcases-ai-powered-solutions-by-students-and-startups.html"> Read more</a>
+                <div class="carousel-slide-content">
+                  <img src="images/hackathon/solo.jpeg" alt="Hackathon win">
+                  <div class="carousel-caption-side">
+                    <h2>Last February, my team won 1st in Finance in a hackathon</h2>
+                    <a href="https://news.miami.edu/coe/stories/2025/02/hackathon-showcases-ai-powered-solutions-by-students-and-startups.html">Read more</a>
                   </div>
+                </div>
               </div>
 
               <div class="carousel-item">
-                <img class="d-block w-100" src="images/hackathon/figma-gg.png" alt="second slide">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-slide-content">
+                  <img src="images/hackathon/figma-gg.png" alt="App designer">
+                  <div class="carousel-caption-side">
                     <h3>I was the app designer</h3>
-                    <p>My prototype was used for the mobile app and website's design. </p>
+                    <p>My prototype was used for the mobile app and website's design.</p>
                   </div>
-              </div>
-
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/hackathon/greengaurd.png" alt="second slide">
-                <div class="carousel-caption d-none d-md-block">
-                
-                    <a href="https://greenguard.miami/"> Visit our website!</a>
-                  </div>
+                </div>
               </div>
     
             </div>
@@ -106,10 +81,11 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+        </section>
 <!-- carousel ends -->
 
     <div class="words" id="internship">
-          I’m seeking opportunities in product design and AI engineering where I can begin my career building impactful, well-considered solutions alongside intentional, forward-thinking teams.
+          I’m seeking opportunities in Product Design and AI engineering where I can begin my career building impactful, well-considered solutions alongside intentional, forward-thinking teams.
         </div>
 
     </div>    

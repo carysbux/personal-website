@@ -21,6 +21,80 @@ body {
   overflow: auto;
   min-height: 100vh;
   display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Navigation bar */
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 3vw;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: rgb(247, 242, 231);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #1a365d;
+}
+
+/* Page content for Case Studies and Projects */
+.page-content {
+  padding: 5vh 5vw;
+  min-height: 50vh;
+}
+
+.page-title {
+  font-family: 'deutsch-gothic';
+  font-size: 8vh;
+  margin-bottom: 2rem;
+}
+
+/* iframe previews for Case Studies and Projects */
+.iframe-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.iframe-preview {
+  font-family: inherit;
+}
+
+.iframe-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.iframe-preview iframe,
+.iframe-preview .preview-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+.iframe-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #1a365d;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.iframe-link:hover {
+  text-decoration: underline;
 }
 
 #big-words {
@@ -36,34 +110,14 @@ opacity: 0;
 transition: opacity 1s ease-in-out;
 }
 
-/* cursor tailing effect  below*/
-
-.image {
-  width: 25vmin;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  opacity: 1 !important; /* Force visibility */
-  pointer-events: none;
-}
-
-.image[data-status="active"] {
-  opacity: 1;
-}
-
-.image[data-status="inactive"] {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-
-
 .words{
-  font-family: 'Fira Code', serif;
+  font-family: inherit;
   font-size: 36px;
   padding: 5vw;
 }
 
 footer {
-  font-family: 'rainy-hearts';
+  font-family: inherit;
   font-size: 24px;
   text-align: center;
   padding: 5vh;
@@ -134,21 +188,78 @@ footer {
 
 /* carousel styling */
 
-.carousel-inner {
-  max-width: 60vw; /* Adjust the percentage as needed */
-  height: 40vw;
-  margin: 0 auto;
-  margin-bottom: 2rem; /* Add space beneath the carousel */
- position: relative;
+.carousel-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  min-height: 320px;
 }
 
-.carousel-item img {
-  width: 60vw; /* Adjust the percentage as needed */
-  height: 40vw; /* Ensure the height is less than the width for a landscape aspect ratio */
-  max-width: 850px; /* Set a maximum width */
-  max-height: 550px; /* Set a maximum height to maintain the aspect ratio */
-  object-fit: cover; /* Ensure the image covers the entire area without distortion */
-  margin: 0 auto; /* Center the image */
+.carousel-inner {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-item {
+  min-height: 320px;
+}
+
+.carousel-slide-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-height: 320px;
+}
+
+.carousel-slide-content img {
+  width: 400px;
+  height: 280px;
+  min-width: 400px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-caption-side {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem 0;
+}
+
+.carousel-caption-side h2,
+.carousel-caption-side h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.carousel-caption-side p {
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption-side a {
+  color: #1a365d;
+  text-decoration: none;
+}
+
+.carousel-caption-side a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide-content {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .carousel-slide-content img {
+    width: 100%;
+    min-width: 0;
+    height: 240px;
+  }
+
+  .carousel-item {
+    min-height: auto;
+  }
 }
 
 /* button styling */
@@ -162,7 +273,7 @@ footer {
 
 
 #btn-en, #btn-fr {
-  background-color: #C8A2C8 !important;
+  background-color: #1a365d !important;
   color: white !important;
   border: none !important;
   padding: 12px 24px !important;
@@ -170,19 +281,19 @@ footer {
   cursor: pointer !important;
   border-radius: 8px !important;
   transition: background-color 0.3s ease, transform 0.2s ease !important;
-  font-family: 'Fira Code', monospace !important;
+  font-family: inherit !important;
 }
 
 
 /* Hover effect */
 #btn-en:hover, #btn-fr:hover {
-  background-color: #B98EB9; 
+  background-color: #0d2137; 
   transform: scale(1.05); 
 }
 
 /* Active (clicked) effect */
 #btn-en:active, #btn-fr:active {
-  background-color: #A070A0;
+  background-color: #0a1a2e;
   transform: scale(0.98); 
 }
 
