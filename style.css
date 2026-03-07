@@ -75,7 +75,11 @@ body {
   font-weight: 600;
 }
 
-.iframe-preview iframe,
+.iframe-preview .preview-link {
+  display: block;
+  cursor: pointer;
+}
+
 .iframe-preview .preview-image {
   width: 100%;
   aspect-ratio: 1;
@@ -83,18 +87,11 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   object-fit: cover;
+  transition: opacity 0.2s ease;
 }
 
-.iframe-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #1a365d;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.iframe-link:hover {
-  text-decoration: underline;
+.iframe-preview .preview-link:hover .preview-image {
+  opacity: 0.9;
 }
 
 #big-words {
