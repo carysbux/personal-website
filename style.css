@@ -108,6 +108,57 @@ header {
   opacity: 0.9;
 }
 
+/* Design pieces: show full artwork without heavy cropping */
+.iframe-preview .preview-image.preview-contain {
+  object-fit: contain;
+  background: #111;
+}
+
+/* Designs page: full-aspect artwork, not square tiles */
+.design-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.design-item {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.design-link {
+  display: inline-block;
+}
+
+.design-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.design-pdf-item {
+  max-width: 960px;
+}
+
+.design-pdf-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.design-pdf-page {
+  width: 100%;
+  height: 95vh;
+  min-height: 900px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: #111;
+}
+
 #big-words {
   font-family: 'Retrogression', serif;
   padding-top: 5vh;
