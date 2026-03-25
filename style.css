@@ -1,27 +1,32 @@
 @font-face {
-  font-family: 'deutsch-gothic';
-  src: url(fonts/Deutsch.ttf);
+  font-family: 'Retrogression';
+  src: url('fonts/Retrogression-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'rainy-hearts';
-  src: url(fonts/rainyhearts.ttf);
+  font-family: 'FTOverpass';
+  src: url('fonts/FTOverpass-FREE.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face{
-  font-family: 'alagard';
-  src: url(fonts/alagard.ttf);
+html {
+  background-color: #000;
+  color: #fff;
 }
 
 body {
-  width: fit-content;
-  background-color: rgb(247, 242, 231);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 0;
-  overflow: auto;
+  overflow-x: auto;
   min-height: 100vh;
-  display: inline;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Navigation bar */
@@ -29,20 +34,20 @@ body {
   display: flex;
   gap: 2rem;
   padding: 1.5rem 3vw;
-  font-family: inherit;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 18px;
-  background-color: rgb(247, 242, 231);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .main-nav a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
-  color: #1a365d;
+  color: #b8c5ff;
 }
 
 /* Page content for Case Studies and Projects */
@@ -52,9 +57,11 @@ body {
 }
 
 .page-title {
-  font-family: 'deutsch-gothic';
+  font-family: 'Retrogression', serif;
   font-size: 8vh;
   margin-bottom: 2rem;
+  color: #fff;
+  font-weight: normal;
 }
 
 /* iframe previews for Case Studies and Projects */
@@ -66,13 +73,20 @@ body {
 }
 
 .iframe-preview {
-  font-family: inherit;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #fff;
+}
+
+header {
+  background-color: #000;
 }
 
 .iframe-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: #fff;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .iframe-preview .preview-link {
@@ -83,9 +97,9 @@ body {
 .iframe-preview .preview-image {
   width: 100%;
   aspect-ratio: 1;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
   object-fit: cover;
   transition: opacity 0.2s ease;
 }
@@ -95,11 +109,13 @@ body {
 }
 
 #big-words {
-  font-family: 'deutsch-gothic';
+  font-family: 'Retrogression', serif;
   padding-top: 5vh;
   padding-left: 3vw;
   padding-right: 20vw;
   font-size: 15vh;
+  color: #fff;
+  font-weight: normal;
 }
 
 #second-page{
@@ -107,17 +123,29 @@ opacity: 0;
 transition: opacity 1s ease-in-out;
 }
 
-.words{
-  font-family: inherit;
+.words {
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 36px;
   padding: 5vw;
+  color: #fff;
 }
 
 footer {
-  font-family: inherit;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 24px;
   text-align: center;
   padding: 5vh;
+  color: #fff;
+}
+
+footer a {
+  color: #b8c5ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
 }
 
 /* card styling below*/
@@ -221,25 +249,44 @@ footer {
   flex: 1;
   min-width: 200px;
   padding: 1rem 0;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #fff;
 }
 
 .carousel-caption-side h2,
 .carousel-caption-side h3 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
+  color: #fff;
 }
 
 .carousel-caption-side p {
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
 .carousel-caption-side a {
-  color: #1a365d;
+  color: #b8c5ff;
   text-decoration: none;
 }
 
 .carousel-caption-side a:hover {
   text-decoration: underline;
+  color: #fff;
+}
+
+/* Bootstrap carousel on dark background */
+.carousel-section .carousel-control-prev-icon,
+.carousel-section .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.carousel-section .carousel-indicators li {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.carousel-section .carousel-indicators .active {
+  background-color: #fff;
 }
 
 @media (max-width: 768px) {
