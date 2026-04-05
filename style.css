@@ -27,6 +27,7 @@ body {
   overflow-x: auto;
   min-height: 100vh;
   font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: left;
 }
 
 /* Navigation bar */
@@ -50,7 +51,7 @@ body {
   color: #b8c5ff;
 }
 
-/* Page content for Case Studies and Projects */
+/* Page content (graphic design page, etc.) */
 .page-content {
   padding: 5vh 5vw;
   min-height: 50vh;
@@ -62,19 +63,23 @@ body {
   margin-bottom: 2rem;
   color: #fff;
   font-weight: normal;
+  text-align: left;
 }
 
-/* iframe previews for Case Studies and Projects */
+/* iframe-style preview cards (projects / case study on home, etc.) */
 .iframe-previews {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
 }
 
 .iframe-preview {
   font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #fff;
+  text-align: left;
+  min-width: 0;
 }
 
 header {
@@ -108,13 +113,47 @@ header {
   opacity: 0.9;
 }
 
+/* Live page preview (iframe thumbnail) */
+.preview-link--embed {
+  text-decoration: none;
+}
+
+.preview-embed-frame {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  background: #111;
+  transition: opacity 0.2s ease;
+}
+
+.preview-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 0;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.iframe-preview .preview-link--embed:hover .preview-embed-frame {
+  opacity: 0.92;
+}
+
 /* Design pieces: show full artwork without heavy cropping */
 .iframe-preview .preview-image.preview-contain {
   object-fit: contain;
   background: #111;
 }
 
-/* Designs page: full-aspect artwork, not square tiles */
+/* Graphic design page: full-aspect artwork, not square tiles */
 .design-gallery {
   display: flex;
   flex-direction: column;
@@ -124,7 +163,7 @@ header {
 
 .design-item {
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .design-link {
@@ -159,19 +198,51 @@ header {
   background: #111;
 }
 
+.hero-top {
+  margin-bottom: 0;
+}
+
 #big-words {
   font-family: 'Retrogression', serif;
   padding-top: 5vh;
-  padding-left: 3vw;
-  padding-right: 20vw;
+  padding-bottom: 0.35rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin: 0;
   font-size: 15vh;
   color: #fff;
   font-weight: normal;
+  line-height: 1.05;
+  text-align: left;
 }
 
-#second-page{
-opacity: 0;
-transition: opacity 1s ease-in-out;
+/* Internship line: directly under hero, smaller than body .words */
+.hero-internship {
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 0 5vw 2.5rem;
+  margin: 0;
+  max-width: 52rem;
+  text-align: left;
+}
+
+#second-page {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+}
+
+/* Center everything below the hero: equal side margins on wide screens */
+.home-body {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 5vw, 3rem);
+  padding-right: clamp(1.25rem, 5vw, 3rem);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .words {
@@ -179,14 +250,104 @@ transition: opacity 1s ease-in-out;
   font-size: 36px;
   padding: 5vw;
   color: #fff;
+  text-align: left;
+}
+
+/* Graduation blurb: under hackathon, above case studies */
+.words--compact {
+  font-size: clamp(1.15rem, 2.5vw, 1.75rem);
+  line-height: 1.45;
+  padding: 2rem 0 2.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* Home: case studies / graphic design blocks (below bio / teams paragraph) */
+.home-work {
+  padding: 0 0 3rem;
+  text-align: left;
+}
+
+.home-work--follows {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.home-work-heading {
+  font-family: 'Retrogression', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: normal;
+  margin: 0 0 0.25rem;
+  color: #fff;
+  text-align: left;
+}
+
+/* Secondary section title (same display font as page titles, stepped down) */
+.home-work-heading--secondary {
+  font-size: clamp(1.75rem, 4.2vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.home-work .iframe-previews {
+  margin-top: 1.5rem;
+}
+
+/* Brochure: both pages stacked in Graphic Design section */
+.home-brochure-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.home-brochure-stack .preview-link {
+  display: block;
+}
+
+/* Home work: category badges below title (type + subject) */
+.work-category-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 0 0.75rem;
+}
+
+.work-category {
+  display: inline-block;
+  margin: 0;
+  padding: 0.3rem 0.65rem;
+  background: rgba(184, 197, 255, 0.1);
+  border: 1px solid rgba(184, 197, 255, 0.35);
+  border-radius: 6px;
+  font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b8c5ff;
+}
+
+.home-work .iframe-preview .iframe-title {
+  margin-bottom: 0.4rem;
+}
+
+.design-gallery .design-item .iframe-title {
+  margin-bottom: 0.4rem;
 }
 
 footer {
   font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 24px;
   text-align: center;
-  padding: 5vh;
+  padding: 5vh 0;
+  margin: 0;
   color: #fff;
+}
+
+footer .home-body {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
 }
 
 footer a {
@@ -262,32 +423,33 @@ footer a:hover {
 }
 
 
-/* carousel styling */
+/* Home: stacked hackathon highlights (image + text, alternating) */
 
-.carousel-section {
+.featured-stack {
+  box-sizing: border-box;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  min-height: 320px;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: stretch;
 }
 
-.carousel-inner {
-  width: 100%;
-  position: relative;
-}
-
-.carousel-item {
-  min-height: 320px;
-}
-
-.carousel-slide-content {
+.featured-row {
   display: flex;
   align-items: center;
   gap: 2rem;
-  min-height: 320px;
+  min-height: 280px;
+  width: 100%;
+  justify-content: flex-start;
 }
 
-.carousel-slide-content img {
+.featured-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.featured-row img {
   width: 400px;
   height: 280px;
   min-width: 400px;
@@ -296,63 +458,47 @@ footer a:hover {
   border-radius: 8px;
 }
 
-.carousel-caption-side {
+.featured-caption {
   flex: 1;
   min-width: 200px;
   padding: 1rem 0;
   font-family: 'FTOverpass', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #fff;
+  text-align: left;
 }
 
-.carousel-caption-side h2,
-.carousel-caption-side h3 {
+.featured-caption h2,
+.featured-caption h3 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   color: #fff;
 }
 
-.carousel-caption-side p {
+.featured-caption p {
   margin-bottom: 0.5rem;
   color: #fff;
 }
 
-.carousel-caption-side a {
+.featured-caption a {
   color: #b8c5ff;
   text-decoration: none;
 }
 
-.carousel-caption-side a:hover {
+.featured-caption a:hover {
   text-decoration: underline;
   color: #fff;
 }
 
-/* Bootstrap carousel on dark background */
-.carousel-section .carousel-control-prev-icon,
-.carousel-section .carousel-control-next-icon {
-  filter: invert(1);
-}
-
-.carousel-section .carousel-indicators li {
-  background-color: rgba(255, 255, 255, 0.35);
-}
-
-.carousel-section .carousel-indicators .active {
-  background-color: #fff;
-}
-
 @media (max-width: 768px) {
-  .carousel-slide-content {
+  .featured-row,
+  .featured-row--reverse {
     flex-direction: column;
     min-height: auto;
   }
 
-  .carousel-slide-content img {
+  .featured-row img {
     width: 100%;
     min-width: 0;
     height: 240px;
-  }
-
-  .carousel-item {
-    min-height: auto;
   }
 }

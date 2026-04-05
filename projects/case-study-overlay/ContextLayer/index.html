@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContextLayer — Circle objects in images</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">ContextLayer</h1>
+        <p class="tagline">Circle objects in images with Gemini</p>
+      </div>
+      <button class="new-chat-btn" id="newChatBtn">
+        <span class="icon">+</span> New image
+      </button>
+      <div class="chat-history" id="chatHistory"></div>
+      <div class="sidebar-footer">
+        <button class="settings-btn" id="settingsBtn">API settings</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="chat-header">
+        <h2 id="chatTitle">Upload an image to get started</h2>
+      </div>
+
+      <div class="chat-area">
+        <div class="messages" id="messages">
+          <div class="upload-zone" id="uploadZone">
+            <div class="upload-content">
+              <div class="upload-icon">🖼️</div>
+              <p>Drop an image here or click to upload</p>
+              <p class="upload-hint">PNG, JPG, WebP — then describe what to circle</p>
+            </div>
+          </div>
+          <div class="image-message" id="imageMessage" style="display: none;">
+            <div class="image-message-content">
+              <div class="image-controls">
+                <button class="export-btn" id="exportBtn">Download</button>
+                <button class="clear-circles-btn" id="clearCirclesBtn">Clear circles</button>
+              </div>
+              <div class="image-wrapper" id="imageWrapper">
+                <img id="sourceImage" alt="Your image">
+                <canvas id="markupCanvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input-area">
+          <div class="input-wrapper">
+            <button class="attach-btn" id="attachBtn" title="Attach image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+              </svg>
+            </button>
+            <textarea 
+              id="messageInput" 
+              placeholder="Describe objects to circle..."
+              rows="1"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" style="display: none">
+
+  <div class="modal" id="settingsModal">
+    <div class="modal-content">
+      <h3>Gemini API Settings</h3>
+      <p class="modal-desc">Get your API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>. Stored locally in your browser.</p>
+      <div class="form-group">
+        <label for="apiKeyInput">API Key</label>
+        <input type="password" id="apiKeyInput" placeholder="Enter your Gemini API key">
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" id="cancelSettingsBtn">Cancel</button>
+        <button class="btn-primary" id="saveSettingsBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

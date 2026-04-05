@@ -5,90 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carys Bernard </title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="style.css?v=1.5">
+    <link rel="stylesheet" href="style.css?v=4.2">
 </head>
 <body>
     <!-- header and nav below-->
     <header>
         <nav class="main-nav">
             <a href="index.html">Home</a>
-            <a href="designs.html">Designs</a>
-            <a href="projects.html">Projects</a>
-            <a href="case-studies.html">Case Studies</a>
+            <a href="index.html#case-studies">Case Studies</a>
+            <a href="index.html#graphic-design">Graphic Design</a>
         </nav>
     </header>
     <!-- center page words below-->
-    <div>
+    <div class="hero-top">
         <h1 id="big-words">
             Hello! I'm Carys
         </h1>
+        <p class="hero-internship" id="internship">
+            I’m seeking opportunities in Front-End Engineering and Product Design where I can begin my career building impactful, well-considered solutions alongside intentional, forward-thinking teams.
+        </p>
     </div>
 
-    <!--second page below / carousel / js reference -->
+    <!--second page below / js reference -->
     <div id="second-page">
 
-        <div class="words" id="goal">
-            I value intentional, well-designed technology and enjoy shaping ideas into usable, meaningful products. I’m especially drawn to work that blends technical problem-solving with conceptual clarity and user-centered design, and focuses on how the systems function.
-
-        </div>
+    <div class="home-body">
 
         <!-- more about me bio here -->
 
 
         <!-- more about me bio here -->
 
-<!-- carousel below -->
-        <section class="carousel-section">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-    
-              <div class="carousel-item active">
-                <div class="carousel-slide-content">
-                  <img src="images/hackathon/solo.jpeg" alt="Hackathon win">
-                  <div class="carousel-caption-side">
+        <section class="featured-stack" aria-label="Hackathon highlights">
+            <div class="featured-row">
+                <img src="images/hackathon/solo.jpeg" alt="Hackathon win">
+                <div class="featured-caption">
                     <h2>Last February, my team won First Place in Finance in a hackathon</h2>
                     <a href="https://news.miami.edu/coe/stories/2025/02/hackathon-showcases-ai-powered-solutions-by-students-and-startups.html">Read more</a>
-                  </div>
                 </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="carousel-slide-content">
-                  <img src="images/hackathon/figma-gg.png" alt="App designer">
-                  <div class="carousel-caption-side">
+            </div>
+            <div class="featured-row featured-row--reverse">
+                <img src="images/hackathon/figma-gg.png" alt="App designer">
+                <div class="featured-caption">
                     <h3>I was the app designer</h3>
                     <p>My prototype was used for the mobile app and website's design.</p>
-                  </div>
                 </div>
-              </div>
-    
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
         </section>
-<!-- carousel ends -->
 
-    <div class="words" id="internship">
-          I’m seeking opportunities in Product Design and AI engineering where I can begin my career building impactful, well-considered solutions alongside intentional, forward-thinking teams.
+        <div class="words words--compact" id="goal">
+            I'm graduating from the University of Miami with a degree in Interactive Media and I'm passionate about experimental design for websites and apps.
         </div>
+
+        <section class="home-work" id="case-studies" aria-labelledby="home-work-heading">
+            <h2 id="home-work-heading" class="home-work-heading home-work-heading--secondary">Case Studies</h2>
+            <div class="iframe-previews">
+                <div class="iframe-preview">
+                    <h3 class="iframe-title">Emotional Analysis Dashboard</h3>
+                    <p class="work-category-row">
+                        <span class="work-category">Coursework</span>
+                        <span class="work-category">Data analysis</span>
+                    </p>
+                    <a href="projects/show-synth/docs/" class="preview-link">
+                        <img src="images/emotion-dashboard-preview.png" alt="Episode Emotion Analysis Dashboard preview" class="preview-image">
+                    </a>
+                </div>
+                <div class="iframe-preview">
+                    <h3 class="iframe-title">Context Layer AI</h3>
+                    <p class="work-category-row">
+                        <span class="work-category">Side project</span>
+                        <span class="work-category">Visual AI</span>
+                    </p>
+                    <a href="projects/case-study-overlay/" class="preview-link preview-link--embed" aria-label="Context Layer AI — open full page">
+                        <span class="preview-embed-frame">
+                            <iframe src="projects/case-study-overlay/" class="preview-iframe" title="Context Layer AI preview" loading="lazy"></iframe>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-work home-work--follows" id="graphic-design" aria-labelledby="graphic-design-heading">
+            <h2 id="graphic-design-heading" class="home-work-heading home-work-heading--secondary">Graphic Design</h2>
+            <div class="iframe-previews">
+                <div class="iframe-preview">
+                    <h3 class="iframe-title">Northrup Grumman Brochure</h3>
+                    <p class="work-category-row">
+                        <span class="work-category">Coursework</span>
+                        <span class="work-category">Graphic design</span>
+                    </p>
+                    <div class="home-brochure-stack">
+                        <a href="images/ng-design-project-page-1.png" target="_blank" rel="noopener noreferrer" class="preview-link">
+                            <img src="images/ng-design-project-page-1.png" alt="Northrup Grumman brochure — page 1" class="preview-image preview-contain">
+                        </a>
+                        <a href="images/ng-design-project-page-2.png" target="_blank" rel="noopener noreferrer" class="preview-link">
+                            <img src="images/ng-design-project-page-2.png" alt="Northrup Grumman brochure — page 2" class="preview-image preview-contain">
+                        </a>
+                    </div>
+                </div>
+                <div class="iframe-preview">
+                    <h3 class="iframe-title">Zine-Style Tin</h3>
+                    <p class="work-category-row">
+                        <span class="work-category">Side project</span>
+                        <span class="work-category">Graphic design</span>
+                    </p>
+                    <a href="images/my-design-tin.png" target="_blank" rel="noopener noreferrer" class="preview-link">
+                        <img src="images/my-design-tin.png" alt="Zine-style tin — Carys Bernard, B.S.C. Interactive Media, University of Miami '26, coding languages and design software collage" class="preview-image preview-contain">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     </div>    
    
     <!-- footer below -->
     <footer id="connect">
+        <div class="home-body">
         <p>
            <span id="connect-text">Let's connect on</span> 
            <a id="linkedin-link" href="https://www.linkedin.com/in/carysbernard/">
@@ -100,16 +134,11 @@
            <span id="github-text">or check out my</span>  
            <a id="github-link" href="https://github.com/carysbux">GitHub</a>
         </p>
+        </div>
     </footer>
 
 
     <script src="script.js"></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
 
 </body>
