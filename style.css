@@ -73,6 +73,7 @@ body {
   gap: 2rem;
   margin-top: 2rem;
   width: 100%;
+  align-items: stretch;
 }
 
 .iframe-preview {
@@ -80,6 +81,9 @@ body {
   color: #fff;
   text-align: left;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 header {
@@ -97,6 +101,7 @@ header {
 .iframe-preview .preview-link {
   display: block;
   cursor: pointer;
+  width: 100%;
 }
 
 .iframe-preview .preview-image {
@@ -292,15 +297,67 @@ header {
   margin-top: 1.5rem;
 }
 
-/* Brochure: both pages stacked in Graphic Design section */
-.home-brochure-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+/* Brochure carousel: manual controls only */
+.brochure-carousel {
+  position: relative;
+  display: block;
 }
 
-.home-brochure-stack .preview-link {
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide.is-active {
   display: block;
+}
+
+.carousel-control {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-control:hover {
+  background: rgba(184, 197, 255, 0.2);
+}
+
+.carousel-control--prev {
+  left: 0.4rem;
+}
+
+.carousel-control--next {
+  right: 0.4rem;
+}
+
+.pdf-preview-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+
+.pdf-preview-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Home work: category badges below title (type + subject) */

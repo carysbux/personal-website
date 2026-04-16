@@ -30,6 +30,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Manual brochure carousel (no auto-advance)
+    const carousels = document.querySelectorAll('[data-carousel]');
+    carousels.forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        const prevButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+        let currentIndex = slides.findIndex((slide) => slide.classList.contains('is-active'));
+
+        if (slides.length === 0 || !prevButton || !nextButton) {
+            return;
+        }
+
+        if (currentIndex < 0) {
+            currentIndex = 0;
+            slides[0].classList.add('is-active');
+        }
+
+        const setActiveSlide = (index) => {
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle('is-active', slideIndex === index);
+            });
+        };
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            setActiveSlide(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            setActiveSlide(currentIndex);
+        });
+    });
+
     // Reveal the second page div when scrolling using Intersection Observer
     const secondPage = document.getElementById('second-page');
     const observer = new IntersectionObserver((entries) => {
